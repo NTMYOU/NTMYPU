@@ -6,6 +6,9 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
 @Builder
 @Setter
 @Getter
@@ -44,6 +47,18 @@ public class User {
 
     @Column
     private Boolean credit; // 정지된 계정 여부
+
+
+    @Column(length = 1000)
+    private String mainImgUrl;  // 대표 이미지 URL
+
+    @ElementCollection
+    @CollectionTable(name = "user_images", joinColumns = @JoinColumn(name = "user_id"))
+    @Column(name = "image_url", length = 1000)
+    private List<String> imageUrls = new ArrayList<>();
+
+    @Column
+    private String mbti; // MBTI 형식
 
     // 가입날짜 자동으로 들어가게 하기
     // PrePersist -> Entity가 DB 저장전에 호출 되기 때문에 자동으로 저장 됨
