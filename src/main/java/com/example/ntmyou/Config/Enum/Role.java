@@ -1,4 +1,4 @@
-package com.example.ntmyou.Config;
+package com.example.ntmyou.Config.Enum;
 
 public enum Role {
     USER("일반회원"),

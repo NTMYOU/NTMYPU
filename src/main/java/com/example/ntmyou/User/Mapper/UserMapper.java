@@ -14,7 +14,7 @@ public class UserMapper {
                 .password(passwordEncoder.encode(requestDto.getPassword())) // 여기서 암호화
                 .gender(requestDto.getGender())
                 .age(requestDto.getAge())
-                .address(requestDto.getAddress())
+                //.address(requestDto.getAddress())
                 .build();
     }
 
@@ -23,9 +23,12 @@ public class UserMapper {
                 user.getCode(),
                 user.getName(),
                 user.getGender(),
-                user.getAge(),
-                user.getAddress()
+                //user.getAddress(),
+                user.getAge()
         );
     }
+
+
+
 }
 

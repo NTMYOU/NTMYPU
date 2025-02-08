@@ -16,6 +16,13 @@ spring:
     username: root
     password: akwldrk1
 
+jwt:
+  secret: ${JWT_SECRET}
+
+  config:
+    import: optional:file:.env  # 환경 변수 파일 로드
+
+
 springdoc:
   default-consumes-media-type: application/json;charset=UTF-8
   default-produces-media-type: application/json;charset=UTF-8
@@ -24,4 +31,13 @@ springdoc:
     disable-swagger-default-url: true
     display-request-duration: true
     operations-sorter: alpha
+
+
+# 오류메시지 확인하기
+logging:
+  level:
+    com:
+      example:
+        ntmyou: DEBUG
+
 
